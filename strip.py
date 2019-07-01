@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-"""This file strips fields from a biblatex file. The orginal code was written by astrobel found here: 
-https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-certain-fields-for-less-cluttered-bibliographies  
-I made the code more robust by modifying it to run from the command line, adding automatic outputfile creation, 
-and taking in multiple fields to strip.
+"""This file strips fields from a biblatex file. The orginal code was written by astrobel found here: https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-certain-fields-for-less-cluttered-bibliographies  
+I made the code more robust by modifying it to run from the command line, automatic outputfile creation, and taking in multiple fields to strip.
 2019 Jake Chanenson 
 
 """
@@ -23,10 +21,11 @@ def main():
   q_flag = True
   strip = []
   while q_flag == True:
-     raw_strip = input("What would you like to strip (press q to quit): ")
+     raw_strip = input("What would you like to strip? \n (press q to when you're done): ")
      if raw_strip == "q":
        break
      strip.append(raw_strip)
+     print("Things to strip", end = " ")
      print(strip)
 
   print("Striping {} from {} and writing to {}".format(strip[0:], inputF, outputF))
@@ -54,8 +53,6 @@ def clean(inputF, outputF, strip):
 
         elif flag == 1:
             if line.strip().endswith(end) == True:
-              if word != "cpyflg":
-                print("Stripped %s" %(word))
               flag = 0
                       
         else:
@@ -65,5 +62,3 @@ def clean(inputF, outputF, strip):
     
 if __name__ == "__main__":
   main()
-
-
