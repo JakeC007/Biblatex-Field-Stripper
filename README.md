@@ -19,11 +19,10 @@ Here is what the program looks like:
 
 ![Image Of How To Use The Program](https://imgur.com/gMJWspb)
 
-![Biblatex Before](https://imgur.com/UVvDUnU)
+![Biblatex Before](https://i.imgur.com/UVvDUnU.png)
 
 ![Biblatex After](https://imgur.com/l21trRB) 
 
 
-![Biblatex Before](https://imgur.com/UVvDUnU) test
 
 
