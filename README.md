@@ -21,6 +21,6 @@ Here is what the program looks like:
 
 ![Biblatex Before](https://imgur.com/UVvDUnU)
 
-![Biblatex After](https://imgur.com/l21trRB)
+![Biblatex After](https://imgur.com/l21trRB) 
 
 
