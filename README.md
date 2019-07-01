@@ -12,3 +12,15 @@ How to use is as follows:
 3. enter the name of the fields you want to strip. This is case senstitive!
 4. Press q to stop entering new fields
 5. Open your new biblatex file. The naming convention is <input filename>FIXED.bib
+
+
+Here is what the program looks like:
+
+
+![Image Of How To Use The Program](https://imgur.com/gMJWspb)
+
+![Biblatex Before](https://imgur.com/UVvDUnU)
+
+![Biblatex After](https://imgur.com/l21trRB)
+
+
