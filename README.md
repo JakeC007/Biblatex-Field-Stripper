@@ -16,16 +16,16 @@ How to use is as follows:
 
 Here is what the program looks like:
 
-Below is an amage of what the input looks like
-![Image Of How To Use The Program](https://i.imgur.com/gMJWspb.png)
+Below is an image of what the input looks like
+![Image Of How To Use The Program](https://i.imgur.com/WTX2h92.png)
 
 
 Below is an image of a biblatex entry in the input file
-![Biblatex Before](https://i.imgur.com/UVvDUnU.png)
+![Biblatex Before](https://i.imgur.com/qcRPTow.png)
 
 
 Below is an image of a biblatex entry in the output file
-![Biblatex After](https://i.imgur.com/l21trRB.png) 
+![Biblatex After](https://i.imgur.com/WAT2nCV.png) 
 
 
 
