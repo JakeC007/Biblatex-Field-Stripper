@@ -4,7 +4,6 @@ https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-
 I made the code more robust by modifying it to run from the command line, automatic outputfile creation, and taking in 
 multiple fields to strip.
 2019 Jake Chanenson 
-
 """
 import sys
 
@@ -12,7 +11,6 @@ def main():
   if len(sys.argv) != 1:
     print("Usage: python3 prog.py ")
     sys.exit
- 
  
   inputF = ''
   raw_inputF = input("Enter your .bib filename: ")
@@ -30,9 +28,14 @@ def main():
      print("Things to strip", end = " ")
      print(strip)
 
-  print("Striping {} from {} and writing to {}".format(strip[0:], inputF, outputF))
+  file_found = " "
+  file_found = clean(inputF, outputF, strip)
 
-  clean(inputF, outputF, strip)
+  if file_found == "quit": #if the IOexception was raised, handle it
+    sys.exit
+  else: #if the input file was found
+    end_pos = len(strip)-1
+    print("Cleaned {} from {} and writing to {}".format(strip[0:end_pos], inputF, outputF))
 
 def clean(inputF, outputF, strip):
   filename = inputF # the input file
@@ -40,27 +43,27 @@ def clean(inputF, outputF, strip):
   start = '' # set type for field to strip
   end = '},'
   strip.append("cpyflg") #flag needed for complete strip
-
   
   flag = 0 
   tripped = False #flag to ensure that none of the desired fields have been found
-  with open(filename) as infile, open(filename2, 'w+') as outfile:
-    for line in infile:
-      tripped = False
-      for word in strip:
-        start = word + ' = ' #current word to strip
-        if line.strip().startswith(start) == True:
-          flag = 1
-          tripped = True
-
-        elif flag == 1:
-            if line.strip().endswith(end) == True:
-              flag = 0
-                      
-        else:
-          if word == "cpyflg" and tripped == False: 
-            outfile.write(line)
-            
+  try:
+    with open(filename) as infile, open(filename2, 'w+') as outfile:
+      for line in infile:
+        tripped = False
+        for word in strip:
+          start = word + ' = ' #current word to strip
+          if line.strip().startswith(start) == True:
+            flag = 1
+            tripped = True
+          elif flag == 1:
+              if line.strip().endswith(end) == True:
+                flag = 0               
+          else:
+            if word == "cpyflg" and tripped == False: 
+              outfile.write(line)
+  except IOError: #If the input file was not found
+    print("File not found. Please input the filename w/out the extension")
+    return "quit"          
     
 if __name__ == "__main__":
   main()
