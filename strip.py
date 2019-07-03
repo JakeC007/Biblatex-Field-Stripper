@@ -32,9 +32,12 @@ def main():
       raw_strip = input("What would you like to strip? \n (press q to when you're done): ")
       if raw_strip == "q":
         break
-      strip.append(raw_strip)
-      print("Things to strip", end = " ")
-      print(strip)
+      if raw_strip in lst_strip_options: #validating input 
+        strip.append(raw_strip)
+        print("Things to strip:", end = " ")
+        print(strip)
+      else:
+        print("Please input one of the options listed above.")
 
     clean(inputF, outputF, strip)
 
@@ -62,22 +65,16 @@ def clean(inputF, outputF, strip):
   filename = inputF # the input file
   filename2 = outputF # create a new file for output
   start = '' # set type for field to strip
-  end = '},'
   strip.append("cpyflg") #flag needed for complete strip
   
-  flag = 0 
   tripped = False #flag to ensure that none of the desired fields have been found
-  with open(filename) as infile, open(filename2, 'w+') as outfile:
+  with open(filename) as infile, open(filename2, 'w') as outfile:
     for line in infile:
       tripped = False
       for word in strip:
         start = word + ' = ' #current word to strip
         if line.strip().startswith(start) == True:
-          flag = 1
-          tripped = True
-        elif flag == 1:
-            if line.strip().endswith(end) == True:
-              flag = 0               
+          tripped = True         
         else:
           if word == "cpyflg" and tripped == False: 
             outfile.write(line)          
