@@ -6,10 +6,22 @@ https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-
 I made the code more robust by modifying it to run from the command line, automatic outputfile creation, giving options on what to strip 
 and taking in multiple fields to strip.
 
-How to use is as follows:
-1. run the program
-2. enter the filename of your .bib file WITHOUT the extension
-3. enter the name of the fields you want to strip. This is case senstitive!
+
+How to run the program from the internet:
+1. Go to https://repl.it/languages/python3
+2. Copy and paste the contents of the strip.py file into the main.py text field
+3. Upload your Biblatex file
+4. Press the run button
+5. Enter the filename of your .bib file WITHOUT the extension 
+6. Enter the name of the fields you want to strip. This is case senstitive!
+7. Press q to stop entering new fields
+8. Download your new biblatex file(it should be on the left). The naming convention is <input filename>FIXED.bib
+
+
+How to run the program locally:
+1. Run the program
+2. Enter the filename of your .bib file WITHOUT the extension
+3. Enter the name of the fields you want to strip. This is case senstitive!
 4. Press q to stop entering new fields
 5. Open your new biblatex file. The naming convention is <input filename>FIXED.bib
 
