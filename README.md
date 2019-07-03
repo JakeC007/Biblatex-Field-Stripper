@@ -27,7 +27,7 @@ to strip, adding input validation, and (most importantly) taking in multiple fie
 5. Open your new biblatex file. The naming convention is <input filename>FIXED.bib
 
 
-### Here is what the program looks like:
+## Here is what the program looks like:
 
 Below is an image of what the input looks like
 ![Image Of How To Use The Program](https://i.imgur.com/WTX2h92.png)
