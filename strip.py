@@ -47,7 +47,7 @@ def main():
 def getOptions(inputF):
   strip_options = []
   try:
-    with open(inputF, 'r') as f:
+    with open(inputF, 'r', encoding='UTF-8') as f:
       for line in f:
         temp_word = line.split(None, 1)
         try:
