@@ -68,7 +68,7 @@ def clean(inputF, outputF, strip):
   strip.append("cpyflg") #flag needed for complete strip
   
   tripped = False #flag to ensure that none of the desired fields have been found
-  with open(filename) as infile, open(filename2, 'w') as outfile:
+  with open(filename, encoding='UTF-8') as infile, open(filename2, 'w', encoding='UTF-8') as outfile:
     for line in infile:
       tripped = False
       for word in strip:
